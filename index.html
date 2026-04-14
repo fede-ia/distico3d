@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federico Magallanes - Marketing Digital & IA</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #00C2CB;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .calculator {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: none;
+            font-size: 1rem;
+        }
+        select {
+            background-color: #333;
+            color: white;
+        }
+        button {
+            background-color: #00C2CB;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .price-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00C2CB;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .features {
+            margin: 40px 0;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            background-color: #1a1a1a;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #00C2CB;
+        }
+        .whatsapp-btn {
+            display: block;
+            text-align: center;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 30px 0;
+        }
+        .whatsapp-btn:hover {
+            opacity: 0.9;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            margin-top: 50px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <h1>Federico Magallanes</h1>
+            <p>Marketing Digital & Automatizaciones con IA</p>
+            <p>No es magia, es estrategia</p>
+        </section>
+
+        <section class="calculator">
+            <h2>Calculá tu presupuesto</h2>
+            <select id="businessType">
+                <option value="">Seleccioná tu tipo de negocio</option>
+                <option value="300000">Comercio simple (ropa, ferretería, dietética)</option>
+                <option value="350000">Gastronomía (cafetería, restaurante)</option>
+                <option value="400000">Servicios profesionales (médico, abogado, contador)</option>
+                <option value="400000">Deportes y bienestar (pilates, gimnasio, canchita)</option>
+                <option value="500000">Inmobiliaria o turismo</option>
+                <option value="550000">Negocio con stock y asesoramiento (perfumería, tecnología)</option>
+                <option value="700000">Empresa mediana o múltiples sucursales</option>
+            </select>
+            <div class="price-display" id="priceDisplay"></div>
+            <p>* Incluye mantenimiento mensual de $60.000 desde el 2do mes</p>
+        </section>
+
+        <section class="features">
+            <h2>¿Qué incluye el servicio?</h2>
+            <ul>
+                <li>Agente de WhatsApp con IA personalizado</li>
+                <li>Integración con tus sistemas actuales</li>
+                <li>Soporte técnico y actualizaciones</li>
+                <li>Entrenamiento del modelo para tu negocio</li>
+            </ul>
+        </section>
+
+        <a href="https://wa.me/5493875370409" class="whatsapp-btn">Contactame por WhatsApp</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Federico Magallanes - Salta, Argentina
+    </footer>
+
+    <script>
+        const businessType = document.getElementById('businessType');
+        const priceDisplay = document.getElementById('priceDisplay');
+
+        businessType.addEventListener('change', function() {
+            const price = parseInt(this.value);
+            if (price) {
+                priceDisplay.textContent = `Precio estimado: $${price.toLocaleString('es-AR')}`;
+            } else {
+                priceDisplay.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
