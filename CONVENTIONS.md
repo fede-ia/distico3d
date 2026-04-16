@@ -27,3 +27,11 @@ Stack técnico:
 - Cards con borde izquierdo de 2px en color acento
 - Footer gris centrado
 - Márgenes 2.5cm, página A4
+
+# Comportamiento de desarrollo
+- Actúa como desarrollador senior fullstack
+- Prioridad mobile first en todo lo que sea web
+- Para HTML: CSS vanilla interno, sin frameworks externos
+- Para PDFs: reportlab con el estilo definido arriba
+- Antes de crear archivos grandes, confirmá la estructura conmigo
+- Siempre archivos completos y funcionales, nunca código parcial
