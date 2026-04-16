@@ -101,12 +101,61 @@
             z-index: 2;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .hero p.hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            margin-bottom: 3rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,107,0,0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            min-width: 150px;
+            border: 1px solid rgba(255,107,0,0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 15px;
+            }
+            .stat-item {
+                padding: 15px;
+                min-width: 120px;
+            }
+            .stat-number {
+                font-size: 1.5rem;
+            }
         }
 
         .hero-bg {
@@ -506,11 +555,25 @@
     <!-- Premium Hero Section -->
     <section class="hero">
         <div class="hero-content container">
-            <h1>Transformá tu negocio con Automatización IA & Meta Ads</h1>
-            <p>Estrategias comprobadas que generan resultados reales para negocios en Salta y todo el país</p>
-            <div>
-                <a href="#contact" class="btn btn-primary">Comenzar Ahora</a>
-                <a href="#about" class="btn btn-secondary">Conóceme</a>
+            <h1>Automatización IA + Meta Ads: <span style="color: var(--primary)">Multiplicá tus Ventas</span> en Salta</h1>
+            <p class="hero-subtitle">Sistemas probados que generan <strong>+40% conversiones</strong> y atienden clientes 24/7 para negocios locales</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Quiero más Ventas</a>
+                <a href="#benefits" class="btn btn-secondary">Ver Beneficios</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">+300%</span>
+                    <span class="stat-label">ROAS promedio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Atención automática</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">En Salta</span>
+                </div>
             </div>
         </div>
     </section>
