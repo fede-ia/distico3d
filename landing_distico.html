@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISTICO - Impresión 3D con Buena Onda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --naranja: #ff751f;
+            --amarillo: #ffbd59;
+            --rosa: #f7c6ef;
+            --azul: #2196f3;
+            --verde: #c7d245;
+            --blanco: #ffffff;
+            --negro: #000000;
+            --sombra: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--blanco);
+            color: var(--negro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bungee', cursive;
+            font-weight: normal;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .logo-distico {
+            max-width: 250px;
+            margin: 0 auto;
+            transition: var(--transicion);
+        }
+
+        .logo-distico:hover {
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(255,117,31,0.1) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .hero h1 {
+            color: var(--naranja);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--negro);
+            margin-bottom: 30px;
+        }
+
+        /* Personajes Section */
+        .personajes {
+            padding: 60px 0;
+        }
+
+        .personajes h2 {
+            text-align: center;
+            color: var(--naranja);
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .personajes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .personaje-card {
+            padding: 30px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .personaje-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .catalina {
+            background-color: var(--rosa);
+        }
+
+        .thiago {
+            background-color: var(--azul);
+            color: var(--blanco);
+        }
+
+        .sany {
+            background-color: var(--verde);
+        }
+
+        .personaje-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background-color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Galería */
+        .galeria {
+            padding: 60px 0;
+        }
+
+        .galeria h2 {
+            text-align: center;
+            color: var(--naranja);
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .galeria-item {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.05);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Sobre Alejo */
+        .sobre-alejo {
+            padding: 60px 0;
+            text-align: center;
+            background-color: var(--amarillo);
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .sobre-alejo h2 {
+            color: var(--negro);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .sobre-alejo p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--verde);
+            color: var(--negro);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: var(--transicion);
+            z-index: 100;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--naranja);
+            color: var(--blanco);
+            margin-top: 60px;
+        }
+
+        .social-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .personajes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="logodistico.png" alt="DISTICO Logo" class="logo-distico">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>PIEZAS 3D PENSADAS PARA VOS</h1>
+            <p>HECHO CON BUENA ONDA</p>
+        </div>
+    </section>
+
+    <!-- Personajes Section -->
+    <section class="personajes">
+        <div class="container">
+            <h2>NUESTROS PERSONAJES</h2>
+            <div class="personajes-grid">
+                <div class="personaje-card catalina">
+                    <div class="personaje-icon">C</div>
+                    <h3>CATALINA</h3>
+                    <p>La creativa del equipo, siempre con ideas innovadoras para cada proyecto.</p>
+                </div>
+                <div class="personaje-card thiago">
+                    <div class="personaje-icon">T</div>
+                    <h3>THIAGO</h3>
+                    <p>El técnico experto que asegura que cada pieza sea perfecta.</p>
+                </div>
+                <div class="personaje-card sany">
+                    <div class="personaje-icon">S</div>
+                    <h3>SANY</h3>
+                    <p>La energía positiva que mantiene la buena onda en cada creación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Alejo -->
+    <section class="sobre-alejo">
+        <div class="container">
+            <h2>FABRICACIÓN LOCAL EN SALTA</h2>
+            <p>En DISTICO combinamos pasión por el diseño 3D con tecnología de punta para crear piezas únicas. Cada proyecto es tratado con dedicación y ese toque especial que nos caracteriza.</p>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="galeria">
+        <div class="container">
+            <h2>NUESTROS TRABAJOS</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="referencia1.jpg" alt="Trabajo DISTICO 1">
+                </div>
+                <div class="galeria-item">
+                    <img src="referencia2.jpg" alt="Trabajo DISTICO 2">
+                </div>
+                <div class="galeria-item">
+                    <img src="referencia3.jpg" alt="Trabajo DISTICO 3">
+                </div>
+                <div class="galeria-item">
+                    <img src="referencia4.jpg" alt="Trabajo DISTICO 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="social-text">Ya somos más de 9.800 en Instagram @distico3d</p>
+            <p>© 2023 DISTICO - Impresión 3D con Buena Onda</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5493875370409" class="whatsapp-btn">💬</a>
+</body>
+</html>
