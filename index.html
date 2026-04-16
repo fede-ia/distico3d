@@ -3,166 +3,776 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federico Magallanes - Marketing Digital y Automatizaciones con IA</title>
+    <title>Federico Magallanes - Automatización IA + Meta Ads</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #0a0a0a;
-            color: white;
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #34a853;
+            --text: #202124;
+            --text-light: #5f6368;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            box-sizing: border-box;
         }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+        }
+
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(26,115,232,0.1) 0%, rgba(255,255,255,0) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            position: relative;
+            z-index: 2;
         }
-        h1, h2 {
-            color: #00C2CB;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 0;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+
         .hero p {
             font-size: 1.2rem;
-            color: #ccc;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .calculator {
-            background-color: #1a1a1a;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
+
+        .hero-bg {
+            position: absolute;
+            opacity: 0.03;
+            font-size: 30rem;
+            font-weight: 700;
+            color: var(--primary);
+            z-index: 1;
+            user-select: none;
         }
-        select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
+
+        .bg-left {
+            left: -100px;
+            top: -100px;
+        }
+
+        .bg-right {
+            right: -100px;
+            bottom: -100px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 28px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
             border: none;
             font-size: 1rem;
+            margin: 10px 5px;
+            text-align: center;
         }
-        select {
-            background-color: #333;
+
+        .btn-primary {
+            background-color: var(--primary);
             color: white;
+            box-shadow: 0 4px 14px rgba(26, 115, 232, 0.3);
         }
-        button {
-            background-color: #00C2CB;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
         }
-        button:hover {
-            opacity: 0.9;
-        }
-        .price-display {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00C2CB;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .features {
-            margin: 40px 0;
-        }
-        .features ul {
-            list-style: none;
-            padding: 0;
-        }
-        .features li {
-            background-color: #1a1a1a;
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid #00C2CB;
-        }
-        .whatsapp-btn {
-            display: block;
-            text-align: center;
-            background-color: #25D366;
+
+        .btn-whatsapp {
+            background-color: var(--secondary);
             color: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 30px 0;
+            box-shadow: 0 4px 14px rgba(52, 168, 83, 0.3);
+            padding: 16px 24px;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
-        .whatsapp-btn:hover {
-            opacity: 0.9;
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 168, 83, 0.4);
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
+
+        /* Benefits Section */
+        .benefits {
+            background-color: var(--card-bg);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 50px;
         }
-        @media (max-width: 600px) {
-            .hero h1 {
+
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: rgba(26,115,232,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: rgba(26,115,232,0.2);
+            transform: scale(1.1);
+        }
+
+        .benefit-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary);
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Features Section */
+        .features-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.8;
+            margin-right: 25px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .feature-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            background: linear-gradient(135deg, rgba(26,115,232,0.05) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+        }
+
+        /* Calculator Section */
+        .calculator {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+            transition: var(--transition);
+        }
+
+        .calculator:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+
+        .price-display {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 25px 0;
+            text-align: center;
+            padding: 15px;
+            background: rgba(26,115,232,0.1);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--card-bg);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(26,115,232,0.1);
+            font-weight: 700;
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
                 font-size: 2rem;
             }
-            .container {
-                padding: 10px;
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            .hero {
+                min-height: 70vh;
+            }
+            .form-container,
+            .calculator {
+                padding: 25px;
+            }
+            .btn {
+                display: block;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <section class="hero">
-            <h1>Federico Magallanes</h1>
-            <p>Marketing Digital y Automatizaciones con IA</p>
-            <p>No es magia, es estrategia</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content container fade-in">
+            <span class="hero-bg bg-left">IA</span>
+            <span class="hero-bg bg-right">ADS</span>
+            <h1>Automatización con IA + Meta Ads para tu Negocio</h1>
+            <p>Potenciá tus ventas mientras ahorrás tiempo y dinero con soluciones personalizadas de automatización y marketing digital</p>
+            <div>
+                <a href="#contact" class="btn btn-primary">Consultar Ahora</a>
+                <a href="https://wa.me/5493875370409" class="btn btn-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2a10 10 0 0 1 8.17 15.76c-.14.25-.3.48-.45.71-.04.1-.09.15-.13.22l-.4.67a1.968 1.968 0 0 1-2.27.87 20.11 20.11 0 0 1-5.83-2.02 10 10 0 0 1-3.62-3.63A19.932 19.932 0 0 1 2.84 5.21a2 2 0 0 1 .15-1.1 2 2 0 0 1 .87-.88l.65-.4a3 3 0 0 1 .21-.14c.22-.14.46-.3.7-.45A9.99 9.99 0 0 1 12 2zm6 12a7.99 7.99 0 0 0-5-7.28v3.48a1 1 0 0 1-.63.92 6 6 0 0 0 0 11.16 1 1 0 0 1 .63.92v3.48a8 8 0 0 0 5-7.28z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section class="calculator">
-            <h2>Calculá tu presupuesto</h2>
-            <select id="businessType">
-                <option value="">Seleccioná tu tipo de negocio</option>
-                <option value="300000">Comercio simple (ropa, ferretería, dietética)</option>
-                <option value="350000">Gastronomía (cafetería, restaurante)</option>
-                <option value="400000">Servicios profesionales (médico, abogado, contador)</option>
-                <option value="400000">Deportes y bienestar (pilates, gimnasio, canchita)</option>
-                <option value="500000">Inmobiliaria o turismo</option>
-                <option value="550000">Negocio con stock y asesoramiento (perfumería, tecnología)</option>
-                <option value="700000">Empresa mediana o múltiples sucursales</option>
-            </select>
-            <div class="price-display" id="priceDisplay"></div>
-            <p>* Incluye mantenimiento mensual de $60.000 desde el 2do mes</p>
-        </section>
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2>Cómo Beneficiará Tu Negocio</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in delay-1">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2a10 10 0 00-7.07 17.07l1.42-1.42A8 8 0 1112 4a8 8 0 018 8 1 1 0 01-2 0 6 6 0 10-1.76 4.24l1.42 1.42A10 10 0 0012 2z"/>
+                            <path d="M12 6a1 1 0 00-1 1v5a1 1 0 001 1h4a1 1 0 100-2h-3V7a1 1 0 00-1-1z"/>
+                        </svg>
+                    </div>
+                    <h3>Ahorro de Tiempo</h3>
+                    <p>Automatizá la atención al cliente 24/7 y liberá horas de trabajo manual para enfocarte en lo importante</p>
+                </div>
+                <div class="benefit-card fade-in delay-2">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M14 11V8a4 4 0 00-8 0v3a5 5 0 00-2 8v2a1 1 0 001 1h12a1 1 0 001-1v-2a5 5 0 00-2-8zm-3-7a2 2 0 012 2v3H9V6a2 2 0 012-2zm1 11a1 1 0 11-2 0 1 1 0 012 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Más Ventas</h3>
+                    <p>Convertí hasta 3 veces más consultas en ventas reales con nuestra estrategia combinada de IA y anuncios</p>
+                </div>
+                <div class="benefit-card fade-in delay-3">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 22a10 10 0 1110-10 10 10 0 01-10 10zm0-18a8 8 0 108 8 8 8 0 00-8-8zm0 11a1 1 0 01-1-1v-4a1 1 0 012 0v4a1 1 0 01-1 1zm0 3a1 1 0 100-2 1 1 0 000 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Soporte Local</h3>
+                    <p>Asesoramiento personalizado de expertos en Salta que comprenden tu mercado y necesidades específicas</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="features">
-            <h2>¿Qué incluye el servicio?</h2>
-            <ul>
-                <li>Agente de WhatsApp con IA personalizado</li>
-                <li>Integración con tus sistemas actuales</li>
-                <li>Soporte técnico y actualizaciones</li>
-                <li>Entrenamiento del modelo para tu negocio</li>
-            </ul>
-        </section>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Nuestros Servicios Integrales</h2>
+            <div class="features-list">
+                <div class="feature-item fade-in">
+                    <div class="feature-number">1</div>
+                    <div class="feature-content">
+                        <h3>Agentes Conversacionales con IA</h3>
+                        <p>Chatbots avanzados para WhatsApp que entienden el contexto de tu negocio y responden de forma natural como un humano, pero trabajando 24/7 sin descanso.</p>
+                    </div>
+                </div>
+                <div class="feature-item fade-in delay-1">
+                    <div class="feature-number">2</div>
+                    <div class="feature-content">
+                        <h3>Gestión Profesional Meta Ads</h3>
+                        <p>Campañas optimizadas para Instagram y Facebook dirigidas a tu público ideal en Salta, con seguimiento constante y ajustes semanales para maximizar resultados.</p>
+                    </div>
+                </div>
+                <div class="feature-item fade-in delay-2">
+                    <div class="feature-number">3</div>
+                    <div class="feature-content">
+                        <h3>Integración Completa</h3>
+                        <p>Conectamos todo con tus sistemas actuales: calendario de turnos, inventario, CRM o lo que necesites para que funcione como un reloj suizo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <a href="https://wa.me/5493875370409" class="whatsapp-btn">Contactame por WhatsApp</a>
-    </div>
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2>Calculá tu Inversión</h2>
+            <div class="calculator fade-in">
+                <h3>¿Qué tipo de negocio tenés?</h3>
+                <select id="businessType" class="form-control">
+                    <option value="">Seleccioná una opción</option>
+                    <option value="300000">Comercio simple (ropa, ferretería, dietética)</option>
+                    <option value="350000">Gastronomía (cafetería, restaurante)</option>
+                    <option value="400000">Servicios profesionales (médico, abogado, contador)</option>
+                    <option value="400000">Deportes y bienestar (pilates, gimnasio, canchita)</option>
+                    <option value="500000">Inmobiliaria o turismo</option>
+                    <option value="550000">Negocio con stock y asesoramiento (perfumería, tecnología)</option>
+                    <option value="700000">Empresa mediana o múltiples sucursales</option>
+                </select>
+                <div class="price-display" id="priceDisplay">Seleccioná tu negocio para ver la inversión</div>
+                <p><small>* Incluye mantenimiento mensual de $60.000 desde el 2do mes</small></p>
+                <a href="https://wa.me/5493875370409" class="btn btn-whatsapp">Consultar Ahora</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Casos de Éxito</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>"Desde que implementamos el chatbot para nuestro negocio, redujimos el tiempo de atención en un 70% y aumentamos las reservas un 40%. Federico fue clave en el proceso."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">J</div>
+                            <div class="author-info">
+                                <h4>Juan Pérez</h4>
+                                <p>Dueño de Gimnasio Power Fit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-content">
+                        <p>"Las campañas de Facebook que implementamos con Federico generaron resultados inmediatos. Pasamos de 2 a 15 consultas diarias en sólo dos semanas."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">M</div>
+                            <div class="author-info">
+                                <h4>María González</h4>
+                                <p>Cafetería Dulce Pecado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-content">
+                        <p>"Lo mejor es que sigue acompañando el proceso. No es el típico que te entrega el proyecto y desaparece. Resuelve todas nuestras dudas rápidamente."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">P</div>
+                            <div class="author-info">
+                                <h4>Pedro Rodríguez</h4>
+                                <p>Distribuidora Mayorista</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Envianos tu Consulta</h2>
+            <div class="form-container fade-in">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Tipo de Negocio</label>
+                        <select id="business" class="form-control">
+                            <option value="">Seleccioná una opción</option>
+                            <option value="comercio">Comercio</option>
+                            <option value="gastronomia">Gastronomía</option>
+                            <option value="servicios">Servicios Profesionales</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">¿Cómo podemos ayudarte?</label>
+                        <textarea id="message" rows="5" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2026 Federico Magallanes - Salta, Argentina
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Automatización IA</a></li>
+                        <li><a href="#">Gestión Meta Ads</a></li>
+                        <li><a href="#">Chatbots WhatsApp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="tel:+5493875370409">+54 9 3875 370409</a></li>
+                        <li><a href="mailto:fmagallanes@gmail.com">fmagallanes@gmail.com</a></li>
+                        <li><a href="https://wa.me/5493875370409">WhatsApp Directo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Salta, Argentina</h3>
+                    <p>Trabajo con clientes en toda la provincia de Salta</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Federico Magallanes - Marketing Digital & Automatización IA. Todos los derechos reservados.
+            </div>
+        </div>
     </footer>
 
     <script>
+        // Business Type Calculator
         const businessType = document.getElementById('businessType');
         const priceDisplay = document.getElementById('priceDisplay');
 
         businessType.addEventListener('change', function() {
             const price = parseInt(this.value);
             if (price) {
-                priceDisplay.textContent = `Precio estimado: $${price.toLocaleString('es-AR')}`;
+                priceDisplay.textContent = `Inversión desde: $${price.toLocaleString('es-AR')}`;
+                priceDisplay.style.backgroundColor = 'rgba(26,115,232,0.1)';
             } else {
-                priceDisplay.textContent = '';
+                priceDisplay.textContent = 'Seleccioná tu negocio para ver la inversión';
+                priceDisplay.style.backgroundColor = 'transparent';
             }
         });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fake form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por tu consulta! Me comunicaré a la brevedad.');
+            this.reset();
+        });
+
+        // Scroll animation trigger
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.style.opacity = '1';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
