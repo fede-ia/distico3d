@@ -397,7 +397,49 @@
             transition: var(--transition);
         }
 
-        /* Testimonials */
+        /* Caso de Estudio y Testimonios */
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .case-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .case-study-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat .label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .case-instagram-btn {
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
         .testimonials {
             background-color: var(--card-bg);
         }
@@ -1214,9 +1256,12 @@
         </div>
     </footer>
     
-    <!-- WHATSAPP FLOAT BUTTON -->
+    <!-- BOTONES FLOTANTES -->
     <a href="https://wa.me/5493875370409" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/fedemagallaneees" class="instagram-float" target="_blank">
+        <i class="fab fa-instagram"></i>
     </a>
     
     <!-- JavaScript -->
