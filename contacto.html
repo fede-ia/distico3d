@@ -3,132 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Federico Magallanes</title>
+    <meta name="description" content="Contacto directo para automatizaciones con IA y Meta Ads en Salta">
     
-    <title>Contacto | Federico Magallanes - Automatización IA + Meta Ads</title>
-    <meta name="description" content="Contactá a Federico Magallanes, especialista en automatización con IA y Media Buyer en Salta. Respondo personalmente en menos de 2 horas.">
-    
-    <!-- Favicon, Fonts, CSS (mismo que index.html) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .contact-method i {
+            font-size: 24px;
+        }
+        iframe {
+            border: none;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header (mismo que index.html) -->
-    <header class="header">
-        <div class="nav-container container">
-            <a href="index.html" class="logo">FM<span>.</span></a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="sobre-mi.html" class="nav-link">Sobre Mí</a></li>
-                    <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
-                </ul>
-            </nav>
-            <a href="https://wa.me/5493875370409" class="btn btn-primary" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-        </div>
+    <header>
+        <a href="index.html" style="font-size: 24px; font-weight: 600; text-decoration: none; color: #000;">FM.</a>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Hablemos de Tu Proyecto</h1>
-                    <p class="hero-subtitle">Respondo personalmente en menos de 2 horas</p>
-                </div>
+        <h1>Contacto</h1>
+        <p>Respondo personalmente en menos de 2 horas</p>
+
+        <div class="contact-grid">
+            <div>
+                <h2>Dejame tu consulta</h2>
+                <form id="contactForm" onsubmit="return validateForm()">
+                    <label for="name">Nombre completo*</label>
+                    <input type="text" id="name" class="form-control" required>
+                    <span id="nameError" style="color:red;font-size:12px;"></span>
+
+                    <label for="phone">Teléfono/WhatsApp*</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                    <span id="phoneError" style="color:red;font-size:12px;"></span>
+
+                    <label for="business">Tipo de negocio</label>
+                    <select id="business" class="form-control">
+                        <option value="">Seleccionar</option>
+                        <option value="comercio">Comercio</option>
+                        <option value="gastronomia">Gastronomía</option>
+                        <option value="servicios">Servicios</option>
+                        <option value="otros">Otros</option>
+                    </select>
+
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" rows="4" class="form-control"></textarea>
+
+                    <button type="submit" class="btn">Enviar consulta</button>
+                </form>
             </div>
-        </section>
 
-        <!-- Contact Grid -->
-        <section class="section">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Form Column -->
-                    <div class="contact-form">
-                        <h2 class="section-title text-left">Dejame tu consulta</h2>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Nombre completo*</label>
-                                <input type="text" id="name" class="form-control" required>
-                                <div class="error-message" id="nameError"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono/WhatsApp*</label>
-                                <input type="tel" id="phone" class="form-control" required>
-                                <div class="error-message" id="phoneError"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="businessType">Tipo de negocio</label>
-                                <select id="businessType" class="form-control">
-                                    <option value="">Seleccionar</option>
-                                    <option value="comercio">Comercio</option>
-                                    <option value="gastronomia">Gastronomía</option>
-                                    <option value="servicios">Servicios Profesionales</option>
-                                    <option value="fitness">Fitness/Salud</option>
-                                    <option value="otros">Otros</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>¿Qué servicio te interesa?</label>
-                                <div class="checkbox-group">
-                                    <label><input type="checkbox" name="service" value="chatbot"> Chatbot IA</label>
-                                    <label><input type="checkbox" name="service" value="meta-ads"> Meta Ads</label>
-                                    <label><input type="checkbox" name="service" value="automatizacion"> Automatización</label>
-                                    <label><input type="checkbox" name="service" value="dashboard"> Dashboard</label>
-                                    <label><input type="checkbox" name="service" value="otro"> Otro</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje (opcional)</label>
-                                <textarea id="message" rows="4" class="form-control"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar consulta</button>
-                            <div id="formSuccess" class="success-message"></div>
-                        </form>
-                    </div>
-
-                    <!-- Info Column -->
-                    <div class="contact-info">
-                        <h2 class="section-title text-left">Contacto directo</h2>
-                        <div class="contact-method">
-                            <i class="fab fa-whatsapp"></i>
-                            <div>
-                                <h3>WhatsApp</h3>
-                                <p>+54 9 387 537-0409</p>
-                                <a href="https://wa.me/5493875370409" class="btn btn-outline" target="_blank">Enviar mensaje</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>federico@magallanes.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Ubicación</h3>
-                                <p>Salta, Argentina</p>
-                            </div>
-                        </div>
-                        <div class="calendly-embed">
-                            <h3>Agendá una consultoría</h3>
-                            <!-- Reemplazar con tu link real de Calendly -->
-                            <iframe src="https://calendly.com/federicomagallanes/consulta" width="100%" height="400" frameborder="0"></iframe>
-                        </div>
+            <div>
+                <h2>Contacto directo</h2>
+                <div class="contact-method">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>+54 9 387 537-0409</p>
+                        <a href="https://wa.me/5493875370409" class="btn" target="_blank">Enviar mensaje</a>
                     </div>
                 </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>federico@magallanes.com</p>
+                    </div>
+                </div>
+
+                <h3>Agendá una consultoría</h3>
+                <iframe src="https://calendly.com/federicomagallanes/consulta" width="100%" height="400"></iframe>
             </div>
-        </section>
+        </div>
+
+        <script>
+            function validateForm() {
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                let valid = true;
+
+                if (name.length < 3) {
+                    document.getElementById('nameError').textContent = 'Mínimo 3 caracteres';
+                    valid = false;
+                } else {
+                    document.getElementById('nameError').textContent = '';
+                }
+
+                if (phone.length < 8 || !/^\d+$/.test(phone)) {
+                    document.getElementById('phoneError').textContent = 'Mínimo 8 dígitos';
+                    valid = false;
+                } else {
+                    document.getElementById('phoneError').textContent = '';
+                }
+
+                if (valid) {
+                    alert('Formulario enviado correctamente');
+                    return true;
+                }
+                return false;
+            }
+        </script>
 
         <!-- FAQ Section -->
         <section class="section bg-light">
@@ -166,49 +181,12 @@
         </section>
     </main>
 
-    <!-- Footer (mismo que index.html) -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="footer-title">FM<span>.</span></h4>
-                    <p>Automatización IA + Media Buying en Salta, Argentina.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Servicios</h4>
-                    <ul class="footer-links">
-                        <li><a href="servicios.html" class="footer-link">Chatbot WhatsApp</a></li>
-                        <li><a href="servicios.html" class="footer-link">Meta Ads</a></li>
-                        <li><a href="servicios.html" class="footer-link">Dashboards</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Empresa</h4>
-                    <ul class="footer-links">
-                        <li><a href="sobre-mi.html" class="footer-link">Sobre Mí</a></li>
-                        <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
-                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Federico Magallanes. Todos los derechos reservados.</p>
-            </div>
-        </div>
+    <footer style="margin-top: 60px; padding: 20px 0; text-align: center; border-top: 1px solid #eee;">
+        <p>&copy; 2026 Federico Magallanes</p>
     </footer>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5493875370409" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5493875370409" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 2px 10px rgba(0,0,0,0.1);" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/contact.js"></script>
 </body>
 </html>
