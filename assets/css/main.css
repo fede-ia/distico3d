@@ -1,0 +1,99 @@
+/* Variables CSS */
+:root {
+  --primary: #FF8C66;
+  --primary-dark: #E67E5A;
+  --primary-light: rgba(255, 140, 102, 0.1);
+  --text: #1A1A1A;
+  --text-light: #666666;
+  --bg: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --glow: 0 0 15px rgba(255, 165, 0, 0.3);
+  --whatsapp: #25D366;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* Tipografía */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+}
