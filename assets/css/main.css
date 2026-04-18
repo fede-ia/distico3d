@@ -1,12 +1,12 @@
 /* Variables CSS */
 :root {
-  --primary: #FF8C66;
-  --primary-dark: #E67E5A;
-  --primary-light: rgba(255, 140, 102, 0.1);
-  --text: #1A1A1A;
-  --text-light: #666666;
-  --bg: #F8F9FA;
-  --card-bg: #FFFFFF;
+  --primary: #00C2CB; /* Cyan como acento principal */
+  --primary-dark: #0095A8;
+  --primary-light: rgba(0, 194, 203, 0.1);
+  --text: #3A3226; /* Gris marronado para texto */
+  --text-light: #6B6254;
+  --bg: #FFFFFF; /* Fondo blanco tiza */
+  --card-bg: #F8F7F5;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --glow: 0 0 15px rgba(255, 165, 0, 0.3);
