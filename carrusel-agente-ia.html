@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel: ¿Cómo funciona un Agente de IA?</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide {
+            display: none;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #212529;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0070f3;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        
+        li {
+            margin-bottom: 15px;
+            color: #212529;
+        }
+        
+        .branding {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .cta-button {
+            background-color: #0070f3;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .nav-button {
+            background-color: #0070f3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <img src="Gemini_Generated_Image_6o94496o94496o94.png" alt="Federico Magallanes" class="profile-img">
+        <h1>Tu nuevo empleado no duerme, no cobra sueldo y nunca se equivoca.</h1>
+        <h2>¿Cómo funciona realmente un Agente de IA?</h2>
+        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <h1>El 90% de los negocios están estancados en el "trabajo operativo".</h1>
+        <ul>
+            <li>Pasar datos de A a B manualmente.</li>
+            <li>Responder las mismas dudas básicas por WhatsApp.</li>
+            <li>Mover leads de Excel a CRM.</li>
+        </ul>
+        <p>"Hacer esto no es crecer. Es simplemente sobrevivir."</p>
+        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <h1>Chatbot vs. Agente de IA. No son lo mismo.</h1>
+        <p><strong>Chatbot:</strong> Es reactivo. Sigue un árbol de decisiones rígido (A, B, C).</p>
+        <p><strong>Agente:</strong> Es proactivo. Utiliza un modelo de lenguaje (LLM) para razonar y decidir.</p>
+        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <img src="Gemini_Generated_Image_6o94496o94496o94.png" alt="Federico Magallanes" class="profile-img">
+        <h1>Así es como se estructuran.</h1>
+        <ul>
+            <li>Cerebro (LLM): Entiende lenguaje natural en contexto.</li>
+            <li>Manos (APIs): Conecta a Gmail, CRM, WhatsApp (vía n8n).</li>
+            <li>Memoria: Registra interacciones previas.</li>
+        </ul>
+        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+        <h1>¿Cómo actúan? Un flujo simple:</h1>
+        <ol>
+            <li>Input: Consulta por WhatsApp.</li>
+            <li>Razonamiento: IA detecta intención ("agendar").</li>
+            <li>Acción: Usa API de Google Calendar.</li>
+            <li>Confirmación: "Turno reservado para mañana a las 10am."</li>
+        </ol>
+        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+        <img src="Gemini_Generated_Image_6o94496o94496o94.png" alt="Federico Magallanes" class="profile-img">
+        <h1>Dejá de ser el cuello de botella de tu propia operación.</h1>
+        <p>"La automatización con Agentes de IA ya no es el futuro, es el estándar operativo de hoy."</p>
+        <a href="#" class="cta-button">Comentá 'AGENTE' y te cuento cómo empezar a delegar.</a>
+        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-button" onclick="prevSlide()">Anterior</button>
+        <button class="nav-button" onclick="nextSlide()">Siguiente</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+
+</body>
+</html>
