@@ -136,16 +136,23 @@
             to { opacity: 1; }
         }
 
-        .hero-icon {
-            font-size: 3rem;
-            color: var(--dark-gray);
+        .hero-image {
             margin-bottom: 30px;
-            display: inline-block;
-            transition: all 0.5s ease;
         }
 
-        .hero-icon:hover {
-            transform: rotate(15deg) scale(1.1);
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--light-gray);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
@@ -337,8 +344,8 @@
     
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-icon">
-            <i class="fas fa-robot"></i>
+        <div class="hero-image">
+            <img src="c:\Users\PC\OneDrive\Desktop\fede publi\Gemini_Generated_Image_6o94496o94496o94.png" alt="Federico Magallanes" class="profile-photo">
         </div>
         <h1><span class="typewriter">Federico Magallanes</span></h1>
         <p class="subtitle">Automatización IA + Meta Ads</p>
@@ -381,7 +388,7 @@
                 <i class="fab fa-whatsapp"></i>
                 WhatsApp
             </a>
-            <a href="mailto:isabellamagallanespesce@gmail.com" class="contact-btn email-btn">
+            <a href="mailto:federicomagallanes@example.com" class="contact-btn email-btn">
                 <i class="fas fa-envelope"></i>
                 Email
             </a>
@@ -394,7 +401,7 @@
     
     <!-- Footer -->
     <footer>
-        &copy; 2024 Federico Magallanes. Todos los derechos reservados.
+        &copy; 2026 Federico Magallanes. Todos los derechos reservados.
     </footer>
     
     <script>
