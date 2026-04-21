@@ -57,6 +57,57 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         
+        .content {
+            padding: 20px;
+        }
+        
+        ul {
+            text-align: left;
+            margin: 40px auto;
+            max-width: 800px;
+            list-style: none;
+        }
+        
+        li {
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        li::before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: #7b2cbf;
+        }
+        
+        .highlight {
+            font-size: 32px;
+            font-style: italic;
+            color: #7b2cbf;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #7b2cbf;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 28px;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #5a189a;
+        }
+        
         .branding {
             font-size: 28px;
             color: #6c757d;
@@ -69,7 +120,25 @@
     <div class="container">
         <h1>Tu nuevo empleado no duerme, no cobra sueldo y nunca se equivoca</h1>
         <h2>¿Cómo funciona realmente un Agente de IA?</h2>
-        <img src="WhatsApp Image 2026-04-21 at 5.12.39 PM.jpeg" alt="Workflow Agente IA" class="workflow-img">
+        
+        <div class="content">
+            <p>Un Agente de IA es más que un simple chatbot. Es un sistema inteligente que:</p>
+            
+            <ul>
+                <li>✅ Entiende el lenguaje natural y el contexto</li>
+                <li>✅ Se integra con tus herramientas (Gmail, CRM, WhatsApp)</li>
+                <li>✅ Aprende de cada interacción</li>
+                <li>✅ Automatiza procesos complejos</li>
+            </ul>
+            
+            <img src="WhatsApp Image 2026-04-21 at 5.12.39 PM.jpeg" alt="Workflow Agente IA" class="workflow-img">
+            
+            <p class="highlight">"La automatización con Agentes de IA ya no es el futuro, es el estándar operativo de hoy."</p>
+            
+            <p>¿Querés saber cómo implementarlo en tu negocio?</p>
+            <a href="#" class="cta-button">¡Hablemos!</a>
+        </div>
+        
         <p class="branding">@federicomagallaness | AI & Automation Specialist</p>
     </div>
 </body>
