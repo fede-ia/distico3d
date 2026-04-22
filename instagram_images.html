@@ -68,19 +68,33 @@
             gap: 15px;
         }
         
-        .branding:before,
-        .branding:after {
-            content: "";
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, #7b2cbf, #3a0ca3);
-            border-radius: 3px;
+        .branding-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 25px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .branding-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(123,44,191,0.2);
+        }
+        
+        .branding-icon {
+            color: #7b2cbf;
+            font-size: 1.2em;
+        }
+        
+        .branding-text {
+            font-weight: 600;
         }
         
         .branding:hover {
             color: #7b2cbf;
-            transition: color 0.3s ease;
         }
         .highlight {
             font-style: italic;
@@ -103,7 +117,12 @@
     <div class="instagram-post">
         <h1>Tu nuevo empleado no duerme, no cobra sueldo y nunca se equivoca</h1>
         <h2>¿Cómo funciona realmente un Agente de IA?</h2>
-        <div class="branding">@federicomagallaness | AI & Automation Specialist</div>
+        <div class="branding">
+            <div class="branding-container">
+                <span class="branding-icon">⚡</span>
+                <span class="branding-text">@federicomagallaness | AI & Automation Specialist</span>
+            </div>
+        </div>
     </div>
 
     <!-- Post 2 -->
