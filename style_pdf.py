@@ -3,7 +3,7 @@ from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak
 from reportlab.lib.units import inch, cm
-from PyPDF2 import PdfReader
+from pypdf2 import PdfReader  # Cambiado a minúsculas para coincidir con la instalación
 import re
 import os
 
@@ -34,8 +34,9 @@ def setup_styles():
     ))
     
     # Estilo para texto normal
-    styles.add(ParagraphStyle(
-        name='BodyText',
+    if not hasattr(styles, 'BodyText'):
+        styles.add(ParagraphStyle(
+            name='BodyText',
         fontSize=12,
         leading=16,
         fontName='Helvetica',
