@@ -65,23 +65,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
         
-        .branding:before {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 2px;
-            background: #7b2cbf;
-        }
-        
+        .branding:before,
         .branding:after {
             content: "";
             display: block;
-            width: 30px;
-            height: 2px;
-            background: #7b2cbf;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #7b2cbf, #3a0ca3);
+            border-radius: 3px;
+        }
+        
+        .branding:hover {
+            color: #7b2cbf;
+            transition: color 0.3s ease;
         }
         .highlight {
             font-style: italic;
